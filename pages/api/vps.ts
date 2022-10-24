@@ -1,4 +1,3 @@
-import { API_URL } from "../../constants";
 import { ProviderType, VPSLink, VPSRes } from "../../types/response";
 
 export async function getVPS(
@@ -15,7 +14,7 @@ export async function getVPS(
   price?: string | string[],
   period?: string | string[]
 ): Promise<VPSRes> {
-  let url = `${API_URL}/vps?limit=8&offset=${offset}`;
+  let url = `${process.env.API_URL}/vps?limit=8&offset=${offset}`;
   if (provider) {
     url += `&provider=${provider}`;
   }
@@ -54,6 +53,6 @@ export async function getVPS(
 }
 
 export async function getVPSLink(id: string): Promise<VPSLink> {
-  const res = await fetch(`${API_URL}/vps/${id}/link`);
+  const res = await fetch(`${process.env.API_URL}/vps/${id}/link`);
   return await res.json();
 }
