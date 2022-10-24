@@ -24,6 +24,8 @@ export default function VPSList({
   const [speed, setSpeed] = useState((query.speed ?? "") as string);
   const [price, setPrice] = useState((query.price ?? "") as string);
   const [period, setPeriod] = useState((query.period ?? "") as string);
+  const [ipv4, setIPv4] = useState((query.ipv4 ?? "") as string);
+  const [ipv6, setIPv6] = useState((query.ipv6 ?? "") as string);
 
   const handlePageClick = async (event: { selected: number }) => {
     const newOffset = (event.selected * perPage) % total;
@@ -45,12 +47,14 @@ export default function VPSList({
       query.speed = speed;
       query.price = price;
       query.period = period;
+      query.ipv4 = ipv4;
+      query.ipv6 = ipv6;
       await router.push({
         pathname: router.pathname,
         query: query,
       });
     })();
-  }, [bandwidth, cpu, disk, memory, period, price, speed]);
+  }, [bandwidth, cpu, disk, memory, period, price, speed, ipv4, ipv6]);
   return (
     <>
       <div className="flex flex-wrap items-center gap-4">
@@ -128,6 +132,34 @@ export default function VPSList({
           <label className="input-group">
             <input
               type="number"
+              placeholder="Minimum"
+              className="input-bordered input"
+              value={ipv4}
+              onChange={(e) => {
+                setIPv4(e.target.value);
+              }}
+            />
+            <span>IPv4</span>
+          </label>
+        </div>
+        <div className="form-control">
+          <label className="input-group">
+            <input
+              type="number"
+              placeholder="Minimum"
+              className="input-bordered input"
+              value={ipv6}
+              onChange={(e) => {
+                setIPv6(e.target.value);
+              }}
+            />
+            <span>IPv6</span>
+          </label>
+        </div>
+        <div className="form-control">
+          <label className="input-group">
+            <input
+              type="number"
               placeholder="Maximum Price"
               className="input-bordered input"
               value={price}
@@ -174,7 +206,7 @@ export default function VPSList({
               setBandwidth("");
               setSpeed("");
               setPrice("");
-              setPeriod("month");
+              setPeriod("");
             }}
           >
             Reset

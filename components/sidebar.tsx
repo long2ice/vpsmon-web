@@ -19,20 +19,22 @@ export default function Sidebar({
   const query = router.query;
   const category = query.category;
   return (
-    <div className={"bg-slate-800 text-base-300 " + className}>
+    <div className={"bg-neutral " + className}>
       <Link href="/" key="title">
-        <h1 className="py-4 text-center text-2xl font-bold hover:cursor-pointer">
+        <h1 className="py-4 text-center text-2xl font-bold text-neutral-content hover:cursor-pointer">
           VPSMON
         </h1>
       </Link>
       <ul className="px-8">
         <Link href="/">
           <a>
-            <li className="flex items-center pt-5 hover:cursor-pointer hover:text-white">
+            <li className="flex items-center pt-5 hover:cursor-pointer hover:text-neutral-content">
               <FcHome size="1.5em" className="mr-2" />
               <span
                 className={
-                  provider === undefined ? "text-white" : "text-gray-400"
+                  provider === undefined
+                    ? "text-neutral-content"
+                    : "text-gray-400"
                 }
               >
                 All Providers
@@ -73,7 +75,7 @@ export default function Sidebar({
                       <li
                         key={c}
                         className={
-                          "pt-2 text-sm hover:cursor-pointer hover:text-indigo-500 " +
+                          "pt-2 hover:cursor-pointer hover:text-indigo-500 " +
                           (category === c
                             ? "text-indigo-500"
                             : "text-slate-400")

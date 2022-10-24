@@ -4,6 +4,7 @@ import React from "react";
 import { Provider, ProviderDetail } from "../types/response";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Header from "./header";
 
 export default function Layout({
   children,
@@ -25,9 +26,10 @@ export default function Layout({
         provider={provider}
       />
       <div className="flex w-full flex-col">
-        <main className="h-full bg-slate-100 p-4">
+        <Header provider={provider} />
+        <main className="h-full bg-base-200 px-4 pb-4">
           {provider && (
-            <div className="breadcrumbs text-sm">
+            <div className="text breadcrumbs mt-2 font-bold">
               <ul>
                 <li>
                   <Link href="/">
@@ -46,9 +48,17 @@ export default function Layout({
                     </Link>
                   </li>
                 )}
+                {router.pathname == "/[provider]/datacenter" && (
+                  <li>
+                    <Link href={`/${provider?.type}/datacenter`}>
+                      <a>DataCenter</a>
+                    </Link>
+                  </li>
+                )}
               </ul>
             </div>
           )}
+          <div className="divider"></div>
           {children}
         </main>
         <Footer />

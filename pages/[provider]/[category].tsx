@@ -14,7 +14,6 @@ export default function CategoryPage({
   provider,
   providers,
   vps,
-  category,
 }: {
   provider: any;
   providers: Provider[];
@@ -24,8 +23,6 @@ export default function CategoryPage({
 }) {
   return (
     <Layout providers={providers} provider={provider}>
-      <h2 className="mb-4 text-4xl font-bold">{provider.name}</h2>
-      <h3 className="mb-4 text-xl font-bold text-gray-500">{category}</h3>
       <VPSList providers={providers} vps={vps} />
     </Layout>
   );
@@ -39,6 +36,8 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const bandwidth = query.bandwidth ?? undefined;
   const price = query.price ?? undefined;
   const speed = query.speed ?? undefined;
+  const ipv4 = query.ipv4 ?? undefined;
+  const ipv6 = query.ipv6 ?? undefined;
   const period = query.period ?? undefined;
   const provider = await getProvider(type);
   const providers = await getProviders();
@@ -53,6 +52,8 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     disk,
     bandwidth,
     speed,
+    ipv4,
+    ipv6,
     price,
     period
   );
@@ -62,7 +63,6 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
       provider,
       providers,
       vps,
-      category,
     },
   };
 };

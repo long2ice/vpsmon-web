@@ -6,7 +6,7 @@ import { FaDollarSign, FaNetworkWired } from "react-icons/fa";
 import _ from "lodash";
 import { IoSpeedometerOutline } from "react-icons/io5";
 import { useRouter } from "next/router";
-
+import { BsFillHddNetworkFill } from "react-icons/bs";
 export default function VPSCard({
   v,
   providers,
@@ -35,21 +35,15 @@ export default function VPSCard({
         <div className="mb-2 flex flex-col items-start gap-2 text-gray-500">
           <p className={itemClass}>
             <FiCpu />
-            <span>
-              <span className="font-bold">{v.cpu}</span> vCPU Core
-            </span>
+            <span className="font-bold">{v.cpu}</span> vCPU Core
           </p>
           <p className={itemClass}>
             <FaMemory />
-            <span>
-              <span className="font-bold">{v.memory}</span> MB RAM
-            </span>
+            <span className="font-bold">{v.memory}</span> MB RAM
           </p>
           <p className={itemClass}>
             <ImFloppyDisk />
-            <span>
-              <span className="font-bold">{v.disk}</span> GB {v.disk_type}
-            </span>
+            <span className="font-bold">{v.disk}</span> GB {v.disk_type}
           </p>
           <p className={itemClass}>
             <FaNetworkWired />
@@ -61,10 +55,13 @@ export default function VPSCard({
             </span>
           </p>
           <p className={itemClass}>
+            <BsFillHddNetworkFill />
+            <span className="font-bold">{v.ipv4}</span> IPv4 /{" "}
+            <span className="font-bold">{v.ipv6}</span> IPv6
+          </p>
+          <p className={itemClass}>
             <IoSpeedometerOutline />
-            <span>
-              <span className="font-bold">{v.speed}</span> Mbps Speed
-            </span>
+            <span className="font-bold">{v.speed}</span> Mbps Speed
           </p>
           <p className={itemClass}>
             <FaDollarSign />

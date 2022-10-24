@@ -10,6 +10,8 @@ export async function getVPS(
   disk?: string | string[],
   bandwidth?: string | string[],
   speed?: string | string[],
+  ipv4?: string | string[],
+  ipv6?: string | string[],
   price?: string | string[],
   period?: string | string[]
 ): Promise<VPSRes> {
@@ -40,6 +42,12 @@ export async function getVPS(
   }
   if (period) {
     url += `&period=${period}`;
+  }
+  if (ipv4) {
+    url += `&ipv4=${ipv4}`;
+  }
+  if (ipv6) {
+    url += `&ipv6=${ipv6}`;
   }
   const res = await fetch(url);
   return await res.json();

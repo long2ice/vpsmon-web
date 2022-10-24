@@ -14,7 +14,7 @@ export default function Home({
 }) {
   return (
     <Layout providers={providers}>
-      <h2 className="mb-4 text-4xl font-bold">All Providers</h2>
+      <div className="mt-4"></div>
       <VPSList providers={providers} vps={vps} />
     </Layout>
   );
@@ -28,6 +28,8 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const price = query.price ?? undefined;
   const speed = query.speed ?? undefined;
   const period = query.period ?? undefined;
+  const ipv4 = query.ipv4 ?? undefined;
+  const ipv6 = query.ipv6 ?? undefined;
   const offset = Number(query.offset ?? "0");
   const providers = await getProviders();
   const vps = await getVPS(
@@ -39,6 +41,8 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     disk,
     bandwidth,
     speed,
+    ipv4,
+    ipv6,
     price,
     period
   );
