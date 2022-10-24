@@ -16,9 +16,19 @@ export default function Header({ provider }: { provider?: ProviderDetail }) {
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start ml-2 gap-10">
-        <h2 className="text-2xl font-extrabold">
-          {provider ? provider.name : "All Providers"}
-        </h2>
+        {provider ? (
+          <a
+            className="link"
+            href={provider.homepage}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <h2 className="text-2xl font-extrabold">{provider.name}</h2>
+          </a>
+        ) : (
+          <h2 className="text-2xl font-extrabold">All Providers</h2>
+        )}
+
         {provider && (
           <>
             <Link href={`/${type}/datacenter`}>
