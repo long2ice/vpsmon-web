@@ -11,9 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Set env
-        run: |
-          echo "API_URL=${{ secrets.API_URL }}" >> .env.local
       - name: Build and Publish
         uses: VaultVulp/gp-docker-action@1.2.0
         with:
