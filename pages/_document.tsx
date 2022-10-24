@@ -11,6 +11,25 @@ export default function Doucment() {
           strategy="lazyOnload"
           crossOrigin="anonymous"
         />
+        <Script
+          defer
+          data-domain="vpsmon.me"
+          src="https://plausible.long2ice.io/js/plausible.js"
+          strategy="afterInteractive"
+        ></Script>
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-Q2GT1KL6LW"
+        ></Script>
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-Q2GT1KL6LW');
+         `}
+        </Script>
       </Head>
       <body>
         <Main />

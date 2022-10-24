@@ -40,15 +40,33 @@ export default function VPSList({
   };
   useEffect(() => {
     (async () => {
-      query.cpu = cpu;
-      query.memory = memory;
-      query.disk = disk;
-      query.bandwidth = bandwidth;
-      query.speed = speed;
-      query.price = price;
-      query.period = period;
-      query.ipv4 = ipv4;
-      query.ipv6 = ipv6;
+      if (cpu) {
+        query.cpu = cpu;
+      }
+      if (memory) {
+        query.memory = memory;
+      }
+      if (disk) {
+        query.disk = disk;
+      }
+      if (bandwidth) {
+        query.bandwidth = bandwidth;
+      }
+      if (speed) {
+        query.speed = speed;
+      }
+      if (price) {
+        query.price = price;
+      }
+      if (period) {
+        query.period = period;
+      }
+      if (ipv4) {
+        query.ipv4 = ipv4;
+      }
+      if (ipv6) {
+        query.ipv6 = ipv6;
+      }
       await router.push({
         pathname: router.pathname,
         query: query,
