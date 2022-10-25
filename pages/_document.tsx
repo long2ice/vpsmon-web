@@ -5,6 +5,7 @@ export default function Doucment() {
   return (
     <Html>
       <Head>
+        <meta name="propeller" content="e4f336aa147832bf0b66d9d61b3c0be6"/>
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4103172601745047"
