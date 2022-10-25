@@ -5,6 +5,7 @@ import { TbHeartHandshake } from "react-icons/tb";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ProviderDetail, ProviderType } from "../types/response";
+import { FaTelegramPlane } from "react-icons/fa";
 
 export default function Header({ provider }: { provider?: ProviderDetail }) {
   useEffect(() => {
@@ -47,6 +48,11 @@ export default function Header({ provider }: { provider?: ProviderDetail }) {
       </div>
       <div className="navbar-end">
         <ul className="menu menu-horizontal p-0">
+          <li>
+            <a href="tg://resolve?domain=vpsmonchannel">
+              <FaTelegramPlane size="1.5em" />
+            </a>
+          </li>
           <li>
             <a className="btn-ghost btn" href="tg://resolve?domain=jenlors">
               <TbHeartHandshake size="1.5em" />
