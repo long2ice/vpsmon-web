@@ -51,7 +51,7 @@ export default function VPSCard({
               <span className="font-bold">
                 {v.bandwidth === -1 ? "Unlimited" : v.bandwidth}
               </span>{" "}
-              MB Bandwidth
+              GB Bandwidth
             </span>
           </p>
           <p className={itemClass}>
