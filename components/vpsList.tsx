@@ -215,8 +215,21 @@ export default function VPSList({
           </label>
         </div>
         <div className="form-control">
+          <label className="label cursor-pointer gap-2">
+            <span className="label-text font-bold">Triennium</span>
+            <input
+              type="radio"
+              name="period"
+              value="triennium"
+              className="radio"
+              checked={period === "triennium"}
+              onChange={onChange}
+            />
+          </label>
+        </div>
+        <div className="form-control">
           <button
-            className="btn-primary btn-sm btn"
+            className="btn-primary btn"
             onClick={() => {
               setCPU("");
               setMemory("");

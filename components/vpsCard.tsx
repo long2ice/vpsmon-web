@@ -72,12 +72,15 @@ export default function VPSCard({
           </p>
         </div>
         <a
-          className="btn-primary btn-wide btn-sm btn"
+          className={
+            "btn-primary btn-wide btn-sm btn " +
+            (v.count === 0 ? "btn-warning" : "")
+          }
           href={`/vps/link?id=${v.id}`}
           target="_blank"
           rel="noreferrer"
         >
-          Buy Now
+          {v.count === 0 ? "0 Available" : "Buy Now"}
         </a>
       </div>
     </div>
