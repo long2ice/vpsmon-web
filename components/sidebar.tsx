@@ -45,26 +45,23 @@ export default function Sidebar({
         {providers.map((p: Provider) => (
           <li key={p.type}>
             <Link href={`/${p.type}`}>
-              <a>
-                <li
-                  key={p.type}
-                  className={
-                    "flex items-center pt-5 hover:cursor-pointer hover:text-white " +
-                    (provider?.type === p.type ? "text-white" : "text-gray-300")
-                  }
-                >
-                  <div className="avatar">
-                    <div className="w-6 rounded">
-                      <img src={p.icon} alt="provider" />
-                    </div>
+              <a
+                className={
+                  "flex items-center pt-5 hover:cursor-pointer hover:text-white " +
+                  (provider?.type === p.type ? "text-white" : "text-gray-300")
+                }
+              >
+                <div className="avatar">
+                  <div className="w-6 rounded">
+                    <img src={p.icon} alt="provider" />
                   </div>
-                  <span className="ml-2">{p.name}</span>
-                  {provider?.type === p.type ? (
-                    <FiChevronUp className="ml-auto" />
-                  ) : (
-                    <FiChevronDown className="ml-auto" />
-                  )}
-                </li>
+                </div>
+                <span className="ml-2">{p.name}</span>
+                {provider?.type === p.type ? (
+                  <FiChevronUp className="ml-auto" />
+                ) : (
+                  <FiChevronDown className="ml-auto" />
+                )}
               </a>
             </Link>
             {provider?.type === p.type && (

@@ -245,7 +245,7 @@ export default function VPSList({
         </div>
       </div>
       <div className="divider"></div>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-4">
         {data.map((v) => (
           <VPSCard v={v} key={v.name + v.category} providers={providers} />
         ))}
