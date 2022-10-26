@@ -33,12 +33,10 @@ export default function Header({ provider }: { provider?: ProviderDetail }) {
         {provider && (
           <>
             <Link href={`/${type}/datacenter`}>
-              <button className="btn-ghost btn text-lg font-semibold">
-                DataCenter
-              </button>
+              <button className="text-lg font-semibold">DataCenter</button>
             </Link>
             <label
-              className="btn-ghost btn text-lg font-semibold"
+              className="text-lg font-semibold hover:cursor-pointer"
               htmlFor="modal-payment"
             >
               Payment
@@ -59,13 +57,11 @@ export default function Header({ provider }: { provider?: ProviderDetail }) {
             </a>
           </li>
           <li>
-            <button className="btn-ghost btn">
-              <label className="swap swap-rotate">
-                <input type="checkbox" data-toggle-theme="light,dark" />
-                <IoSunnyOutline size="1.5em" className="swap-off" />
-                <IoMoonOutline size="1.5em" className="swap-on" />
-              </label>
-            </button>
+            <label className="swap-rotate swap">
+              <input type="checkbox" data-toggle-theme="light,dark" />
+              <IoSunnyOutline size="1.5em" className="swap-off" />
+              <IoMoonOutline size="1.5em" className="swap-on" />
+            </label>
           </li>
         </ul>
       </div>
