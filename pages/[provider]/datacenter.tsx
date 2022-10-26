@@ -56,7 +56,7 @@ export default function DataCenterPage({
               </p>
               {datacenter.ipv4 && (
                 <p className="flex items-center gap-2">
-                  <span className="font-bold">Test IPv4:</span>{" "}
+                  <span className="font-bold">IPv4:</span>{" "}
                   <span>{datacenter.ipv4}</span>
                   <CopyToClipboard
                     text={datacenter.ipv4}
@@ -70,7 +70,7 @@ export default function DataCenterPage({
               )}
               {datacenter.ipv6 && (
                 <p className="flex items-center gap-2">
-                  <span className="font-bold">Test IPv6:</span>{" "}
+                  <span className="font-bold">IPv6:</span>{" "}
                   <span>{datacenter.ipv6}</span>
                   <CopyToClipboard
                     text={datacenter.ipv6}

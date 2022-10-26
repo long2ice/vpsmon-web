@@ -228,6 +228,19 @@ export default function VPSList({
           </label>
         </div>
         <div className="form-control">
+          <label className="label cursor-pointer gap-2">
+            <span className="label-text font-bold">Quarterly</span>
+            <input
+              type="radio"
+              name="period"
+              value="quarterly"
+              className="radio"
+              checked={period === "quarterly"}
+              onChange={onChange}
+            />
+          </label>
+        </div>
+        <div className="form-control">
           <button
             className="btn-primary btn"
             onClick={() => {

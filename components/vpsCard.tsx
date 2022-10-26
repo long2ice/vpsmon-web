@@ -61,7 +61,10 @@ export default function VPSCard({
           </p>
           <p className={itemClass}>
             <IoSpeedometerOutline />
-            <span className="font-bold">{v.speed}</span> Mbps Speed
+            <span className="font-bold">
+              {v.speed === -1 ? "Unlimited" : v.speed}
+            </span>{" "}
+            Mbps Speed
           </p>
           <p className={itemClass}>
             <FaDollarSign />
