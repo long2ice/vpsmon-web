@@ -26,36 +26,36 @@ export default function Sidebar({
         </h1>
       </Link>
       <ul className="px-8">
-        <Link href="/">
-          <a>
-            <li className="flex items-center pt-5 hover:cursor-pointer hover:text-neutral-content">
+        <li>
+          <Link href="/">
+            <a className="flex items-center pt-5 hover:cursor-pointer hover:text-neutral-content">
               <FcHome size="1.5em" className="mr-2" />
               <span
                 className={
                   provider === undefined
                     ? "text-neutral-content"
-                    : "text-gray-400"
+                    : "text-gray-300"
                 }
               >
                 All Providers
               </span>
-            </li>
-          </a>
-        </Link>
+            </a>
+          </Link>
+        </li>
         {providers.map((p: Provider) => (
-          <div key={p.type}>
+          <li key={p.type}>
             <Link href={`/${p.type}`}>
               <a>
                 <li
                   key={p.type}
                   className={
                     "flex items-center pt-5 hover:cursor-pointer hover:text-white " +
-                    (provider?.type === p.type ? "text-white" : "text-gray-400")
+                    (provider?.type === p.type ? "text-white" : "text-gray-300")
                   }
                 >
                   <div className="avatar">
                     <div className="w-6 rounded">
-                      <img src={p.icon} />
+                      <img src={p.icon} alt="provider" />
                     </div>
                   </div>
                   <span className="ml-2">{p.name}</span>
@@ -70,25 +70,21 @@ export default function Sidebar({
             {provider?.type === p.type && (
               <ul className="pl-8">
                 {provider?.categories.map((c) => (
-                  <Link href={`/${p.type}/${c}`} key={c}>
-                    <a>
-                      <li
-                        key={c}
-                        className={
-                          "pt-2 hover:cursor-pointer hover:text-indigo-500 " +
-                          (category === c
-                            ? "text-indigo-500"
-                            : "text-slate-400")
-                        }
-                      >
-                        {c}
-                      </li>
-                    </a>
-                  </Link>
+                  <li
+                    key={c}
+                    className={
+                      "pt-2 hover:cursor-pointer hover:text-indigo-500 " +
+                      (category === c ? "text-indigo-500" : "text-slate-300")
+                    }
+                  >
+                    <Link href={`/${p.type}/${c}`}>
+                      <a>{c}</a>
+                    </Link>
+                  </li>
                 ))}
               </ul>
             )}
-          </div>
+          </li>
         ))}
       </ul>
     </div>

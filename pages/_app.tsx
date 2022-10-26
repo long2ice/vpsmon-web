@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       />
       <Head>
         <meta name="viewport" content="viewport-fit=cover" />
+        <title>VPSMON | VPS商家聚合</title>
       </Head>
       <Component {...pageProps} />
     </>

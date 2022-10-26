@@ -78,7 +78,7 @@ export default function Header({ provider }: { provider?: ProviderDetail }) {
           <div className="mt-4 grid grid-cols-3 gap-4">
             {provider?.payments.map((p) => (
               <div key={p.name} className="flex items-center gap-2">
-                <img src={p.icon} className="h-10 w-20" />
+                <img src={p.icon} className="h-10 w-20" alt="payment-icon"/>
                 <span className="font-bold">{p.name}</span>
               </div>
             ))}
