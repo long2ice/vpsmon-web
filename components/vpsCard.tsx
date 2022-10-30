@@ -39,7 +39,10 @@ export default function VPSCard({
           </p>
           <p className={itemClass}>
             <FaMemory />
-            <span className="font-bold">{v.memory}</span> MB RAM
+            <span className="font-bold">
+              {Math.round((v.memory / 1024) * 100) / 100}
+            </span>{" "}
+            GB RAM
           </p>
           <p className={itemClass}>
             <ImFloppyDisk />
@@ -62,9 +65,13 @@ export default function VPSCard({
           <p className={itemClass}>
             <IoSpeedometerOutline />
             <span className="font-bold">
-              {v.speed === -1 ? "Unlimited" : v.speed}
-            </span>{" "}
-            Mbps Speed
+              {v.speed === -1
+                ? "Unlimited"
+                : v.speed >= 1024
+                ? v.speed / 1024
+                : v.speed}
+            </span>
+            {v.speed >= 1024 ? "Gbps" : "Mbps"} Speed
           </p>
           <p className={itemClass}>
             <FaDollarSign />
