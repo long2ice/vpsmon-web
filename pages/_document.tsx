@@ -32,13 +32,13 @@ export default function Document() {
         </Script>
         <Script id="propellerads-multitag" async strategy="afterInteractive">
           {`
-            (function(s,u,z,p){s.src = u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://inklinkor.com/tag.min.js',5516323,document.body||document.documentElement)  
-         `}
+            (function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://inklinkor.com/tag.min.js',5542062,document.body||document.documentElement);
+          `}
         </Script>
         <Script id="propellerads-vignette" async strategy="afterInteractive">
           {`
-             (function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('gloaphoo.net',5516324,document.createElement('script'))
-         `}
+            (function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('oaphoace.net',5542065,document.createElement('script'));
+          `}
         </Script>
       </Head>
       <body>
