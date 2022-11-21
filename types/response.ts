@@ -51,6 +51,7 @@ export interface VPS {
   ipv6: number;
   currency: string;
   period: string;
+  remarks: string;
   count: number;
 }
 
@@ -58,6 +59,7 @@ export interface VPSRes {
   total: number;
   data: Array<VPS>;
 }
+
 export interface VPSLink {
   link: string;
 }

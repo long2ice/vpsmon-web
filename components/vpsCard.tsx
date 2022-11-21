@@ -7,6 +7,8 @@ import _ from "lodash";
 import { IoSpeedometerOutline } from "react-icons/io5";
 import { useRouter } from "next/router";
 import { BsFillHddNetworkFill } from "react-icons/bs";
+import { TbNotes } from "react-icons/tb";
+
 export default function VPSCard({
   v,
   providers,
@@ -18,7 +20,7 @@ export default function VPSCard({
   const query = router.query;
   const provider = query.provider as string;
 
-  const itemClass = "flex items-center gap-2";
+  const itemClass = "flex items-center gap-2 justify-start";
   return (
     <div className="card bg-base-100 shadow-xl" key={v.name}>
       <div className="card-body items-center text-center">
@@ -73,6 +75,12 @@ export default function VPSCard({
             </span>
             {v.speed >= 1024 ? "Gbps" : "Mbps"} Speed
           </p>
+          {v.remarks && (
+            <p className={itemClass}>
+              <TbNotes />
+              <span>{v.remarks}</span>
+            </p>
+          )}
           <p className={itemClass}>
             <FaDollarSign />
             <span>
