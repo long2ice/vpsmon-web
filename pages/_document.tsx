@@ -13,7 +13,7 @@ export default function Document() {
         />
         <Script
           defer
-          data-domain="vpsmon.me"
+          data-domain="vpsmon.long2ice.io"
           src="https://plausible.long2ice.io/js/plausible.js"
           strategy="afterInteractive"
         ></Script>
