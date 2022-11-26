@@ -66,6 +66,14 @@ export default function DataCenterPage({
                   >
                     <FiCopy className="hover:cursor-pointer" />
                   </CopyToClipboard>
+                  <a
+                    className="btn-sm btn ml-auto"
+                    target="_blank"
+                    href={`https://ping.pe/${datacenter.ipv4}`}
+                    rel="noreferrer"
+                  >
+                    Ping
+                  </a>
                 </p>
               )}
               {datacenter.ipv6 && (
@@ -80,6 +88,14 @@ export default function DataCenterPage({
                   >
                     <FiCopy className="hover:cursor-pointer" />
                   </CopyToClipboard>
+                  <a
+                    className="btn-sm btn ml-auto"
+                    target="_blank"
+                    href={`https://ping6.ping.pe/${datacenter.ipv6}`}
+                    rel="noreferrer"
+                  >
+                    Ping
+                  </a>
                 </p>
               )}
             </div>
