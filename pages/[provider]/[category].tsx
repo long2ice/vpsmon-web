@@ -57,7 +57,6 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     price,
     period
   );
-
   return {
     props: {
       provider,

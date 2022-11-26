@@ -8,6 +8,8 @@ import { IoSpeedometerOutline } from "react-icons/io5";
 import { useRouter } from "next/router";
 import { BsFillHddNetworkFill } from "react-icons/bs";
 import { TbNotes } from "react-icons/tb";
+import { toast } from "react-toastify";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 export default function VPSCard({
   v,
@@ -100,6 +102,19 @@ export default function VPSCard({
         >
           {v.count === 0 ? "0 Available" : "Buy Now"}
         </a>
+        <CopyToClipboard
+          text={`/subscribe ${v.id}`}
+          onCopy={() => {
+            toast.success("Copied subscribe command to clipboard successfully");
+          }}
+        >
+          <a
+            className="btn-wide btn-sm btn"
+            href="tg://resolve?domain=long2ice_vpsmon_bot"
+          >
+            Subscribe for new
+          </a>
+        </CopyToClipboard>
       </div>
     </div>
   );
