@@ -32,8 +32,11 @@ export default function Header({ provider }: { provider?: ProviderDetail }) {
 
         {provider && (
           <>
-            <Link href={`/${type}/datacenter`}>
-              <button className="text-lg font-semibold">DataCenter</button>
+            <Link
+              href={`/${type}/datacenter`}
+              className="text-lg font-semibold"
+            >
+              DataCenter
             </Link>
             <label
               className="text-lg font-semibold hover:cursor-pointer"

@@ -28,7 +28,7 @@ export default function Sidebar({
       <ul className="px-8">
         <li>
           <Link href="/">
-            <a className="flex items-center pt-5 hover:cursor-pointer hover:text-neutral-content">
+            <div className="flex items-center pt-5 hover:cursor-pointer hover:text-neutral-content">
               <FcHome size="1.5em" className="mr-2" />
               <span
                 className={
@@ -39,13 +39,13 @@ export default function Sidebar({
               >
                 All Providers
               </span>
-            </a>
+            </div>
           </Link>
         </li>
         {providers.map((p: Provider) => (
           <li key={p.type}>
             <Link href={`/${p.type}`}>
-              <a
+              <span
                 className={
                   "flex items-center pt-5 hover:cursor-pointer hover:text-white " +
                   (provider?.type === p.type ? "text-white" : "text-gray-300")
@@ -62,7 +62,7 @@ export default function Sidebar({
                 ) : (
                   <FiChevronDown className="ml-auto" />
                 )}
-              </a>
+              </span>
             </Link>
             {provider?.type === p.type && (
               <ul className="pl-8">
@@ -74,9 +74,7 @@ export default function Sidebar({
                       (category === c ? "text-indigo-500" : "text-slate-300")
                     }
                   >
-                    <Link href={`/${p.type}/${c}`}>
-                      <a>{c}</a>
-                    </Link>
+                    <Link href={`/${p.type}/${c}`}>{c}</Link>
                   </li>
                 ))}
               </ul>

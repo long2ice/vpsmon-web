@@ -32,26 +32,22 @@ export default function Layout({
             <div className="text breadcrumbs mt-2 font-bold">
               <ul>
                 <li>
-                  <Link href="/">
-                    <a>All</a>
-                  </Link>
+                  <Link href="/">All</Link>
                 </li>
                 <li>
-                  <Link href={`/${provider?.type}`}>
-                    <a>{provider?.name}</a>
-                  </Link>
+                  <Link href={`/${provider?.type}`}>{provider?.name}</Link>
                 </li>
                 {category && (
                   <li>
                     <Link href={`/${provider?.type}/${category}`}>
-                      <a>{category}</a>
+                      {category}
                     </Link>
                   </li>
                 )}
                 {router.pathname == "/[provider]/datacenter" && (
                   <li>
                     <Link href={`/${provider?.type}/datacenter`}>
-                      <a>DataCenter</a>
+                      DataCenter
                     </Link>
                   </li>
                 )}
