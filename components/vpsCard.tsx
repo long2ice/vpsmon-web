@@ -112,7 +112,7 @@ export default function VPSCard({
             className="btn-wide btn-sm btn"
             href="tg://resolve?domain=long2ice_vpsmon_bot"
           >
-            Subscribe for new
+            Subscribe in tg bot
           </a>
         </CopyToClipboard>
       </div>

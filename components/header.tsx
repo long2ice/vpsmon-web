@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { ProviderDetail, ProviderType } from "../types/response";
 import { FaTelegramPlane } from "react-icons/fa";
+import { BiBot } from "react-icons/bi";
 
 export default function Header({ provider }: { provider?: ProviderDetail }) {
   useEffect(() => {
@@ -52,6 +53,14 @@ export default function Header({ provider }: { provider?: ProviderDetail }) {
           <li>
             <a href="tg://resolve?domain=vpsmonchannel">
               <FaTelegramPlane size="1.5em" />
+            </a>
+          </li>
+          <li>
+            <a
+              className="btn-ghost btn"
+              href="tg://resolve?domain=long2ice_vpsmon_bot"
+            >
+              <BiBot size="1.5em" />
             </a>
           </li>
           <li>
