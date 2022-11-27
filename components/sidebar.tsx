@@ -3,6 +3,7 @@ import { FcHome } from "react-icons/fc";
 import Link from "next/link";
 import { Provider, ProviderDetail } from "../types/response";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 interface SidebarProps {
   className?: string;
@@ -53,7 +54,12 @@ export default function Sidebar({
               >
                 <div className="avatar">
                   <div className="w-6 rounded">
-                    <img src={p.icon} alt="provider" />
+                    <Image
+                      src={p.icon}
+                      alt="provider"
+                      width={100}
+                      height={100}
+                    />
                   </div>
                 </div>
                 <span className="ml-2">{p.name}</span>
