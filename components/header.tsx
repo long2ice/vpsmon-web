@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { ProviderDetail, ProviderType } from "../types/response";
 import { FaTelegramPlane } from "react-icons/fa";
 import { BiBot } from "react-icons/bi";
+import Image from "next/image";
 
 export default function Header({ provider }: { provider?: ProviderDetail }) {
   useEffect(() => {
@@ -86,7 +87,13 @@ export default function Header({ provider }: { provider?: ProviderDetail }) {
           <div className="mt-4 grid grid-cols-3 gap-4">
             {provider?.payments.map((p) => (
               <div key={p.name} className="flex items-center gap-2">
-                <img src={p.icon} className="h-10 w-20" alt="payment-icon" />
+                <Image
+                  src={p.icon}
+                  className="h-10 w-20"
+                  alt="payment-icon"
+                  width={100}
+                  height={100}
+                />
                 <span className="font-bold">{p.name}</span>
               </div>
             ))}
