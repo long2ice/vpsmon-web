@@ -22,7 +22,7 @@ export default function Sidebar({
   return (
     <div className={"bg-neutral " + className}>
       <Link href="/" key="title">
-        <h1 className="py-4 text-center text-2xl font-bold text-neutral-content hover:cursor-pointer">
+        <h1 className="py-4 text-center text-3xl font-bold text-neutral-content hover:cursor-pointer">
           VPSMON
         </h1>
       </Link>
@@ -30,12 +30,21 @@ export default function Sidebar({
         <li>
           <Link href="/">
             <div className="flex items-center pt-5 hover:cursor-pointer hover:text-neutral-content">
-              <FcHome size="1.5em" className="mr-2" />
+              <div className="avatar">
+                <div className="w-6 rounded">
+                  <Image
+                    src="/favicon.ico"
+                    alt="logo"
+                    width={100}
+                    height={100}
+                  />
+                </div>
+              </div>
               <span
                 className={
                   provider === undefined
-                    ? "text-neutral-content"
-                    : "text-gray-300"
+                    ? "ml-2 text-neutral-content"
+                    : "ml-2 text-gray-300"
                 }
               >
                 All Providers

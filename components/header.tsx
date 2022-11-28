@@ -50,33 +50,29 @@ export default function Header({ provider }: { provider?: ProviderDetail }) {
         )}
       </div>
       <div className="navbar-end">
-        <ul className="menu menu-horizontal p-0">
-          <li>
-            <a href="tg://resolve?domain=vpsmonchannel">
-              <FaTelegramPlane size="1.5em" />
-            </a>
-          </li>
-          <li>
-            <a
-              className="btn-ghost btn"
-              href="tg://resolve?domain=long2ice_vpsmon_bot"
-            >
-              <BiBot size="1.5em" />
-            </a>
-          </li>
-          <li>
-            <a className="btn-ghost btn" href="tg://resolve?domain=jenlors">
-              <TbHeartHandshake size="1.5em" />
-            </a>
-          </li>
-          <li>
-            <label className="swap-rotate swap">
-              <input type="checkbox" data-toggle-theme="light,dark" />
-              <IoSunnyOutline size="1.5em" className="swap-off" />
-              <IoMoonOutline size="1.5em" className="swap-on" />
-            </label>
-          </li>
-        </ul>
+        <a
+          href="tg://resolve?domain=vpsmonchannel"
+          className="btn-ghost btn-circle btn"
+        >
+          <FaTelegramPlane size="1.5em" />
+        </a>
+        <a
+          href="tg://resolve?domain=long2ice_vpsmon_bot"
+          className="btn-ghost btn-circle btn"
+        >
+          <BiBot size="1.5em" />
+        </a>
+        <a
+          href="tg://resolve?domain=jenlors"
+          className="btn-ghost btn-circle btn"
+        >
+          <TbHeartHandshake size="1.5em" />
+        </a>
+        <label className="swap-rotate swap btn-ghost btn-circle btn">
+          <input type="checkbox" data-toggle-theme="light,dark" />
+          <IoSunnyOutline size="1.5em" className="swap-off" />
+          <IoMoonOutline size="1.5em" className="swap-on" />
+        </label>
       </div>
       <input type="checkbox" id="modal-payment" className="modal-toggle" />
       <label htmlFor="modal-payment" className="modal cursor-pointer">
